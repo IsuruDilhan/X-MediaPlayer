@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="css/px-video.css">
+<!--<link rel="stylesheet" href="css/styles.css">-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/material.min.css">
+<link rel="stylesheet" href="css/material-fullpalette.min.css">
+<link rel="stylesheet" href="css/ripples.min.css">
+<link rel="stylesheet" href="css/roboto.min.css">
+<title id="mediaT"></title>
+
+<style type="text/css">
+    video, input {
+        display: block;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .info {
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+
+    }
+
+    .error {
+        color: #fff;
+        background-color: #d2322d;
+        border-color: #ac2925;
+    }
+
+    #wrapper {
+        width: 640px;
+        margin: 1em auto;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    #brand a,
+    p a {
+        border: 1px #fff dotted;
+    }
+
+    #brand a:focus,
+    p a:focus {
+        border: 1px #999 dotted;
+        outline: none;
+    }
+
+    p {
+        padding-top: 1em;
+    }
+
+</style>
+
+<body>
+<div class="col-lg-3"></div>
+<div id="" class="col-lg-6">
+    <!--<div class="text-center" id="messages"></div>-->
+    <div class="text-center" id="message"></div>
+    <marquee id="media" direction="right"></marquee>
+    <div class="px-video-container" id="myvid">
+        <div class="px-video-img-captions-container">
+            <div class="px-video-captions hide"></div>
+            <video  src="" id="cont" class="vid" width="640" height="360" poster="images/logo.png" controls autoplay>
+                <!-- video files -->
+                <!-- text track file -->
+                <track kind="captions" label="English captions" src="" srclang="en" default/>
+                <!-- fallback for browsers that don't support the video element -->
+            </video>
+        </div>
+        <!-- end container for captions and video -->
+        <div id="controls" class="px-video-controls"></div>
+    </div>
+    <!-- end video container -->
+</div>
+<div class="col-lg-3"></div>
+</body>
+<script src="js/px-video.js"></script>
+<script type="text/javascript" src="js/init.js"></script>
+
+<!--<script src="js/filedrag.js"></script>-->
