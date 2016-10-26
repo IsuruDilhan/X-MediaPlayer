@@ -475,7 +475,7 @@ function Xplayer(options) {
 
     document.body.addEventListener('keyup',function(e){
 
-        if(e.keyCode== 37 ) {
+        if(e.keyCode == 37 ) {
 
             var targetTime = obj.movie.currentTime - obj.seekInterval;
             if (targetTime < 0) {
@@ -521,18 +521,28 @@ function Xplayer(options) {
             }
         }
     }, false);
+
     // Get the HTML5 range input element and append audio volume adjustment on change
     obj.btnVolume.addEventListener('change', function() {
         obj.movie.volume = parseFloat(this.value / 10);
+        if (this.value > 0) {
+            obj.movie.muted = false;
+            obj.btnMute.checked = false;
+        } else {
+            obj.movie.muted = true;
+            obj.btnMute.checked = true;
+        }
     }, false);
 
     // Mute
     obj.btnMute.addEventListener('click', function() {
         if (obj.movie.muted === true) {
             obj.movie.muted = false;
+            obj.btnVolume.value = obj.movie.volume * 10;
         }
         else {
             obj.movie.muted = true;
+            obj.btnVolume.value = 0;
         }
     }, false);
 
@@ -547,9 +557,11 @@ function Xplayer(options) {
             }
             if (obj.movie.muted === true) {
                 obj.movie.muted = false;
+                obj.btnVolume.value = obj.movie.volume * 10;
             }
             else {
                 obj.movie.muted = true;
+                obj.btnVolume.value = 0;
             }
         }
     }
